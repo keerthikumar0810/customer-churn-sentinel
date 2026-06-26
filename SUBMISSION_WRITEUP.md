@@ -39,11 +39,11 @@ graph TD
 
 ## Concepts Used
 
-1. **ADK Workflow Graph API** ([agent.py](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/app/agent.py#L208-L224)): Connects graph edges and nodes, managing the state and control paths between agents.
-2. **LlmAgent** ([agent.py](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/app/agent.py#L43-L95)): Configures separate persona-based sub-agents (`coordinator_agent`, `risk_analysis_agent`, `retention_strategy_agent`) with tailored system instructions.
-3. **AgentTool** ([agent.py](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/app/agent.py#L90-L93)): Allows the `coordinator_agent` to invoke sub-agents dynamically as tools.
-4. **MCP Server** ([mcp_server.py](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/app/mcp_server.py)): Hosts a FastMCP server connected to the mock customer database, enabling secure, structured access to metrics and rules.
-5. **Security Checkpoint Node** ([agent.py](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/app/agent.py#L143-L208)): Implements non-LLM preprocessing rules to scrub PII, catch prompt injections, log audits, and reject threats before executing downstream steps.
+1. **ADK Workflow Graph API** ([agent.py](app/agent.py)): Connects graph edges and nodes, managing the state and control paths between agents.
+2. **LlmAgent** ([agent.py](app/agent.py)): Configures separate persona-based sub-agents (`coordinator_agent`, `risk_analysis_agent`, `retention_strategy_agent`) with tailored system instructions.
+3. **AgentTool** ([agent.py](app/agent.py)): Allows the `coordinator_agent` to invoke sub-agents dynamically as tools.
+4. **MCP Server** ([mcp_server.py](app/mcp_server.py)): Hosts a FastMCP server connected to the mock customer database, enabling secure, structured access to metrics and rules.
+5. **Security Checkpoint Node** ([agent.py](app/agent.py)): Implements non-LLM preprocessing rules to scrub PII, catch prompt injections, log audits, and reject threats before executing downstream steps.
 6. **Agents CLI**: Standardizes dependency installation, linting, evaluation runs, and local deployments.
 
 ---
@@ -68,7 +68,7 @@ The Model Context Protocol (MCP) server runs as a background process and exposes
 
 ## Human-in-the-Loop (HITL) Flow
 
-To prevent financial loss from unauthorized or automated discount distribution, any customer with a churn risk score $\ge 0.8$ (High Risk) is routed to the `human_review_node` ([agent.py](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/app/agent.py#L273-L291)).
+To prevent financial loss from unauthorized or automated discount distribution, any customer with a churn risk score $\ge 0.8$ (High Risk) is routed to the `human_review_node` ([agent.py](app/agent.py)).
 - The node yields a `RequestInput` payload to pause the execution.
 - It displays the proposed discount and case details to the human specialist.
 - The workflow resumes only after the human approves or adjusts the discount, ensuring guardrails around customer outreach.
