@@ -156,7 +156,7 @@ Use the provided `Makefile` targets for easy local execution:
    git add .
    git commit -m "Initial commit: customer-churn-sentinel ADK agent"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/customer-churn-sentinel.git
+   git remote add origin https://github.com/keerthikumar0810/customer-churn-sentinel.git
    git push -u origin main
    ```
 
