@@ -171,14 +171,15 @@ Use the provided `Makefile` targets for easy local execution:
 ## Assets
 
 ### Cover Page Banner
-![Cover Page Banner](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/assets/cover_page_banner.png)
+![Cover Page Banner](assets/cover_page_banner.png)
 
 ### Workflow Architecture Diagram
-![Workflow Architecture Diagram](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/assets/architecture_diagram.png)
+![Workflow Architecture Diagram](assets/architecture_diagram.png)
 
 ---
 
 ## Demo Script
 
-The spoken narration script to read during presentation/recording is available at [DEMO_SCRIPT.txt](file:///d:/nani/Ai-%20agents/adk%20-%20worksspace/customer-churn-sentinel/DEMO_SCRIPT.txt).
+The spoken narration script to read during presentation/recording is available at [DEMO_SCRIPT.txt](DEMO_SCRIPT.txt).
+
 
